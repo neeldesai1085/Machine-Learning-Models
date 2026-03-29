@@ -1,0 +1,22 @@
+# Environments
+.venv/
+venv/
+ENV/
+env/
+python/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Notebooks (optional, but often kept in separate branch or ignored if purely for dev)
+# ipynb/ 
+
+# Streamlit
+.streamlit/
+! .streamlit/config.toml
