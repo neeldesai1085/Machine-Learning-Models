@@ -138,7 +138,7 @@ def inject_css():
     }
     .px-wordmark .logotype {
         font-family: var(--font-display);
-        font-size: 3.2rem;
+        font-size: 4.5rem !important;
         color: var(--text-primary);
         letter-spacing: -0.02em;
         line-height: 1;
@@ -149,7 +149,7 @@ def inject_css():
         font-style: italic;
     }
     .px-wordmark .tagline {
-        font-size: 0.78rem;
+        font-size: 1.1rem !important;
         font-weight: 300;
         letter-spacing: 0.18em;
         text-transform: uppercase;
