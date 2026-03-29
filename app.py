@@ -395,11 +395,22 @@ def inject_css():
         background: var(--bg-input) !important;
         border: 1px solid var(--border-mid) !important;
         border-radius: var(--radius-sm) !important;
-        color: var(--text-primary) !important;
+        color: #000000 !important;
         font-family: var(--font-body) !important;
-        font-size: 0.9rem !important;
-        padding: 0.7rem 1rem !important;
+        font-size: 0.95rem !important;
+        padding: 0.75rem 1rem !important;
         transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    div[data-testid="stTextInput"] input::placeholder,
+    div[data-testid="stTextArea"] textarea::placeholder {
+        color: #7a7060 !important;
+        opacity: 0.7 !important;
+    }
+    div[data-testid="stTextArea"] textarea:disabled {
+        -webkit-text-fill-color: #1a1610 !important;
+        background: var(--bg-canvas) !important;
+        opacity: 1 !important;
+        color: #1a1610 !important;
     }
     div[data-testid="stTextInput"] input:focus,
     div[data-testid="stTextArea"] textarea:focus {
@@ -413,8 +424,8 @@ def inject_css():
         font-weight: 600 !important;
         letter-spacing: 0.1em !important;
         text-transform: uppercase !important;
-        color: var(--text-secondary) !important;
-        margin-bottom: 0.4rem !important;
+        color: #1a1610 !important;
+        margin-bottom: 0.45rem !important;
     }
 
     /* ══════════════════════════════════════════════
@@ -494,7 +505,7 @@ def inject_css():
     div[data-testid="stProgressBar"] > div {
         background: var(--border-subtle) !important;
         border-radius: 99px !important;
-        height: 3px !important;
+        height: 6px !important;
     }
     div[data-testid="stProgressBar"] > div > div {
         background: linear-gradient(90deg, var(--accent), var(--accent-mid)) !important;
@@ -503,12 +514,15 @@ def inject_css():
     }
 
     /* Progress bar label text - ensure visibility */
+    div[data-testid="stWidgetLabel"] p,
+    div[data-testid="stMarkdownContainer"] p,
     div[data-testid="stProgressBar"] + div,
-    div[data-testid="stProgressBar"] p,
-    div[data-testid="stProgressBar"] span {
+    [data-testid="stProgressBar"] span,
+    [data-testid="stProgressBar"] p {
         color: #000000 !important;
         font-weight: 600 !important;
-        font-size: 0.85rem !important;
+        font-size: 0.88rem !important;
+        opacity: 1 !important;
     }
 
     /* ══════════════════════════════════════════════
@@ -586,36 +600,31 @@ def inject_css():
         font-size: 0.92rem;
         font-weight: 500;
         line-height: 1.6;
+        color: #000000 !important; /* Force black for contrast */
     }
     .px-result-fire {
         background: var(--error-dim);
-        border-left: 3px solid var(--error);
-        color: var(--error);
+        border-left: 4px solid var(--error);
     }
     .px-result-safe {
         background: var(--success-dim);
-        border-left: 3px solid var(--success);
-        color: var(--success);
+        border-left: 4px solid var(--success);
     }
     .px-result-info {
         background: var(--accent-dim);
-        border-left: 3px solid var(--accent);
-        color: var(--text-primary);
+        border-left: 4px solid var(--accent);
     }
     .px-result-blue {
         background: var(--info-dim);
-        border-left: 3px solid var(--info);
-        color: #000000;
+        border-left: 4px solid var(--info);
     }
     .px-result-green {
         background: var(--success-dim);
-        border-left: 3px solid var(--success);
-        color: #000000;
+        border-left: 4px solid var(--success);
     }
     .px-result-red {
         background: var(--error-dim);
-        border-left: 3px solid var(--error);
-        color: #000000;
+        border-left: 4px solid var(--error);
     }
 
     /* ══════════════════════════════════════════════
