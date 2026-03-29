@@ -591,12 +591,22 @@ def inject_css():
     .px-result-info {
         background: var(--accent-dim);
         border-left: 3px solid var(--accent);
-        color: var(--accent);
+        color: var(--text-primary);
     }
     .px-result-blue {
         background: var(--info-dim);
         border-left: 3px solid var(--info);
-        color: var(--info);
+        color: #000000;
+    }
+    .px-result-green {
+        background: var(--success-dim);
+        border-left: 3px solid var(--success);
+        color: #000000;
+    }
+    .px-result-red {
+        background: var(--error-dim);
+        border-left: 3px solid var(--error);
+        color: #000000;
     }
 
     /* ══════════════════════════════════════════════
@@ -1402,7 +1412,7 @@ with tab_text:
             height=150
         )
 
-        st.markdown('<p style="font-size:0.8rem; margin-bottom:0.5rem; color:var(--text-muted);">Quick-test Samples:</p>', unsafe_allow_html=True)
+        st.markdown('<p style="font-size:0.8rem; margin-bottom:0.5rem; color:#000000; font-weight:600;">Quick-test Samples:</p>', unsafe_allow_html=True)
         samples = [
             "Viral social media claims that the Prime Minister died and was replaced by AI-generated footage",
             "The first stage of the U.S.-backed peace plan, which established the initial truce last October, is now considered largely complete."
@@ -1432,14 +1442,14 @@ with tab_text:
                     elif label.upper() in ["NEGATIVE", "LABEL_0"]: color_class = "px-result-red"
                     
                     st.markdown(f"""
-                    <div class="px-result {color_class}">
-                        <p style="font-size:0.8rem; text-transform:uppercase; font-weight:600; margin-bottom:0.5rem; opacity:0.7;">Tone Identified</p>
+                    <div class="px-result {color_class}" style="color:#000000 !important;">
+                        <p style="font-size:0.8rem; text-transform:uppercase; font-weight:600; margin-bottom:0.5rem; color:#000000;">Tone Identified</p>
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size:2.5rem; font-family:var(--font-display); color:inherit;">{label.replace('LABEL_0', 'NEGATIVE').replace('LABEL_1', 'NEUTRAL').replace('LABEL_2', 'POSITIVE')}</span>
-                            <span style="font-size:1.5rem; font-weight:700;">{score:.1%}</span>
+                            <span style="font-size:2.5rem; font-family:var(--font-display); color:#000000;">{label.replace('LABEL_0', 'NEGATIVE').replace('LABEL_1', 'NEUTRAL').replace('LABEL_2', 'POSITIVE')}</span>
+                            <span style="font-size:1.5rem; font-weight:700; color:#000000;">{score:.1%}</span>
                         </div>
-                        <div style="margin-top:1rem; width:100%; height:8px; background:rgba(0,0,0,0.05); border-radius:4px; overflow:hidden;">
-                            <div style="width:{score*100}%; height:100%; background:currentColor;"></div>
+                        <div style="margin-top:1rem; width:100%; height:8px; background:rgba(0,0,0,0.1); border-radius:4px; overflow:hidden;">
+                            <div style="width:{score*100}%; height:100%; background:#000000;"></div>
                         </div>
                     </div>
                     """, unsafe_allow_html=True)
